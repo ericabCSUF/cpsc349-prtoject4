@@ -11,10 +11,12 @@ console.log(records)
 function Postlist(){
   return (
     records.map(r => (
-      <div>
-        <label><input type="checkbox" id = {r.id} />
+      <div className="checklist">
+        <input type="checkbox" id = {r.id} />
+        <span >
           {r.body}
-          </label>
+        </span>
+        <button onClick={() => removeTODO(r.id)}>Remove </button>
       </div>
     ))
   );
@@ -30,7 +32,10 @@ async function othername() {
   var input = document.getElementById("userInput").value;
   Addnewtodo(input);
 }
-
+async function removeTODO(id) {
+  const record = await pb.collection('posts').delete(id);
+  window.location.reload();
+}
 root.render(
   <React.StrictMode>
     <App />
@@ -43,16 +48,16 @@ export default function App () {
   }
   return (
     <div>
-      <div className="container" >
-        <h1 className="mt-5 text-2xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"> Welcome to your todo list </h1>
+      <div className="py-16">
+        <h1 className=" text-7xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"> Welcome to your todo list </h1>
       </div>
-      <div className="container" >
+      <div className="container">
         <ul>
           <Postlist/>
           <input type="text" id="userInput" placeholder="Add post here"/>
           <button className="btn" onClick= {othername} >Add TODO </button>
-          </ul>
-          <br></br>
+        </ul>
+        <br></br>
       </div>
     </div>
   );

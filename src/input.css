@@ -1,6 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.checklist {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  height: 60px;
+  padding-bottom: 10px;
+  border-color: #dfdcdc #d9d6d6 #ccc;
+  border-radius: 2px;
+  padding-top: 10px;
+  padding-left: 5px;
+  padding-right:5px;
+  background-color: #f0f8ff;
+}
+.checklist span {
+  text-align: left;
+  padding: 5px;
+  justify-content: center;
+}
 .btn {
   display:inline-block;
   background-color: #9a4ef1;
@@ -12,9 +30,47 @@
   border-radius: 2em;
   box-sizing: border-box;
   color: #FFFFFF;
+
+}
+.checklist button {
+  background-color: #fff;
+border: 1px solid #d5d9d9;
+border-radius: 8px;
+box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+box-sizing: border-box;
+color: #0f1111;
+cursor: pointer;
+font-family: "Amazon Ember",sans-serif;
+font-size: 13px;
+line-height: 29px;
+text-align: center;
+width: 100px;
+
+}
+.checklist button:hover {
+  background-color: #f7fafa;
+}
+
+.checklist button: focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
 }
 .container {
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+
+}
+.container ul {
+  position:relative;
+}
+body {
+  background: #b9d9eb;
+
+
 }
