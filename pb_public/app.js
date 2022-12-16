@@ -1,7 +1,7 @@
 const pb = new PocketBase("http://127.0.0.1:8090");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const records = await pb.collection("posts").getFullList(200, {
-  sort: "-created"
+  sort: "+created"
 });
 console.log(records);
 function Postlist() {
@@ -29,5 +29,5 @@ export default function App() {
   async function Logoutclick() {
     pb.authStore.clear();
   }
-  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "py-16" }, /* @__PURE__ */ React.createElement("h1", { className: " text-7xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" }, " Welcome to your todo list ")), /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("ul", null, /* @__PURE__ */ React.createElement(Postlist, null), /* @__PURE__ */ React.createElement("input", { type: "text", id: "userInput", placeholder: "Add post here" }), /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: othername }, "Add TODO ")), /* @__PURE__ */ React.createElement("br", null)));
+  return /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement("div", { className: "py-16" }, /* @__PURE__ */ React.createElement("h1", { className: " text-7xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500" }, " Welcome to your todo list ")), /* @__PURE__ */ React.createElement("div", { className: "todoPrompt" }, /* @__PURE__ */ React.createElement("input", { type: "text", id: "userInput", placeholder: "Add post here" }), /* @__PURE__ */ React.createElement("button", { className: "btn", onClick: othername }, "Add TODO ")), /* @__PURE__ */ React.createElement("div", { className: "container" }, /* @__PURE__ */ React.createElement("div", null, /* @__PURE__ */ React.createElement(Postlist, null)), /* @__PURE__ */ React.createElement("br", null)));
 }

@@ -3,6 +3,7 @@
 @tailwind utilities;
 .checklist {
   display: flex;
+  position: relative;
   justify-content: space-between;
   border-bottom: 1px solid;
   height: 60px;
@@ -10,8 +11,8 @@
   border-color: #dfdcdc #d9d6d6 #ccc;
   border-radius: 2px;
   padding-top: 10px;
-  padding-left: 5px;
-  padding-right:5px;
+  padding-left: 20px;
+  padding-right:20px;
   background-color: #f0f8ff;
 }
 .checklist span {
@@ -58,19 +59,35 @@ width: 100px;
 }
 .container {
   display: flex;
+  flex-flow: column;
   align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  bottom: 50%;
 
+  margin: 0 auto;
+  position: relative;
+  height: 400px;
+  width: 450px;
+  justify-content: center ;
+
+}
+.todoPrompt {
+  display: flex;
+  flex-flow: row;
+  margin: 6px;
+  justify-content: center ;
+
+}
+.container div {
+    overflow-y: auto;
+}
+.todoPrompt input {
+  border-radius: 25px;
+  padding: 0.3em 1.2em;
+  text-align: center;
 }
 .container ul {
   position:relative;
+  background-color: blue;
 }
 body {
   background: #b9d9eb;
-
-
 }

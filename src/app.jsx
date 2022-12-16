@@ -4,7 +4,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 
 // you can also fetch all records at once via getFullList
 const records = await pb.collection('posts').getFullList(200 /* batch size */, {
-    sort: '-created',
+    sort: '+created',
 });
 console.log(records)
 
@@ -50,13 +50,19 @@ export default function App () {
     <div>
       <div className="py-16">
         <h1 className=" text-7xl text-center text-transparent font-extrabold bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"> Welcome to your todo list </h1>
+
+      </div>
+      <div className="todoPrompt">
+      <input type="text" id="userInput" placeholder="Add post here"/>
+      <button className="btn" onClick= {othername} >Add TODO </button>
       </div>
       <div className="container">
-        <ul>
+
+        <div>
+
+
           <Postlist/>
-          <input type="text" id="userInput" placeholder="Add post here"/>
-          <button className="btn" onClick= {othername} >Add TODO </button>
-        </ul>
+        </div>
         <br></br>
       </div>
     </div>
